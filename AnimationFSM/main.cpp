@@ -28,6 +28,13 @@ int main()
 	animated_sprite.addFrame(sf::IntRect(343, 3, 84, 84));
 	animated_sprite.addFrame(sf::IntRect(428, 3, 84, 84));
 
+	animated_sprite.addFrame(sf::IntRect(3, 88, 84, 84));
+	animated_sprite.addFrame(sf::IntRect(88, 88, 84, 84));
+	animated_sprite.addFrame(sf::IntRect(173, 88, 84, 84));
+	animated_sprite.addFrame(sf::IntRect(258, 88, 84, 84));
+	animated_sprite.addFrame(sf::IntRect(343, 88, 84, 84));
+	animated_sprite.addFrame(sf::IntRect(428, 88, 84, 84));
+
 	// Setup the Player
 	Player player(animated_sprite);
 	Input input;
