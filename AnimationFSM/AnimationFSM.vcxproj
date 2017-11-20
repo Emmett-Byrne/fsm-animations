@@ -21,7 +21,10 @@
   <ItemGroup>
     <ClInclude Include="AnimatedSprite.h" />
     <ClInclude Include="Animation.h" />
-    <ClInclude Include="Climbing.h" />
+    <ClInclude Include="Hammering.h" />
+    <ClInclude Include="Shoveling.h" />
+    <ClInclude Include="Swording.h" />
+    <ClInclude Include="Walking.h" />
     <ClInclude Include="Debug.h" />
     <ClInclude Include="Idle.h" />
     <ClInclude Include="Input.h" />
@@ -32,7 +35,10 @@
   <ItemGroup>
     <ClCompile Include="AnimatedSprite.cpp" />
     <ClCompile Include="Animation.cpp" />
-    <ClCompile Include="Climbing.cpp" />
+    <ClCompile Include="Hammering.cpp" />
+    <ClCompile Include="Shoveling.cpp" />
+    <ClCompile Include="Swording.cpp" />
+    <ClCompile Include="Walking.cpp" />
     <ClCompile Include="Idle.cpp" />
     <ClCompile Include="Input.cpp" />
     <ClCompile Include="Jumping.cpp" />

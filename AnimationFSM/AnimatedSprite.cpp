@@ -3,14 +3,14 @@
 
 AnimatedSprite::AnimatedSprite() 
 {
-	m_current_frame = 0;
-	m_startFrame = 0;
-	m_endFrame = 5;
+	m_current_frame = 6;
+	m_startFrame = 6;
+	m_endFrame = 11;
 }
 
-AnimatedSprite::AnimatedSprite(const sf::Texture& t) : Sprite(t), m_current_frame(0), m_time(seconds(0.5f)), m_startFrame(0), m_endFrame(5) {}
+AnimatedSprite::AnimatedSprite(const sf::Texture& t) : Sprite(t), m_current_frame(1), m_time(seconds(0.5f)), m_startFrame(1), m_endFrame(5) {}
 
-AnimatedSprite::AnimatedSprite(const sf::Texture& t, const sf::IntRect& rect) : Sprite(t), m_current_frame(0), m_time(seconds(0.5f)), m_startFrame(0), m_endFrame(5) {
+AnimatedSprite::AnimatedSprite(const sf::Texture& t, const sf::IntRect& rect) : Sprite(t), m_current_frame(1), m_time(seconds(0.5f)), m_startFrame(1), m_endFrame(5) {
 	m_frames.push_back(rect);
 }
 
@@ -42,7 +42,7 @@ const int AnimatedSprite::getCurrentFrame() {
 
 void AnimatedSprite::update(){
 	if (m_clock.getElapsedTime() > m_time) {
-		std::cout << m_current_frame << std::endl;
+		//std::cout << m_current_frame << std::endl;
 		if (m_endFrame > m_current_frame)
 		{
 			m_current_frame++;
@@ -58,5 +58,6 @@ void AnimatedSprite::setFrameRange(int min, int max)
 {
 	m_startFrame = min;
 	m_endFrame = max;
+	m_current_frame = m_startFrame;
 }
 

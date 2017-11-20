@@ -15,6 +15,10 @@ public:
 
 	virtual void update() {}
 
+	virtual int getMinFrame() = 0;
+
+	virtual int getMaxFrame() = 0;
+
 	virtual void idle(Animation* a)
 	{
 		DEBUG_MSG("State::Idling");
@@ -23,9 +27,21 @@ public:
 	{
 		DEBUG_MSG("State::Jumping");
 	}
-	virtual void climbing(Animation* a)
+	virtual void walking(Animation* a)
 	{
-		DEBUG_MSG("State::Climbing");
+		DEBUG_MSG("State::Walking");
+	}
+	virtual void shoveling(Animation* a)
+	{
+		DEBUG_MSG("State::Walking");
+	}
+	virtual void hammering(Animation* a)
+	{
+		DEBUG_MSG("State::Walking");
+	}
+	virtual void swording(Animation* a)
+	{
+		DEBUG_MSG("State::Walking");
 	}
 };
 

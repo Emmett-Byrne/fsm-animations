@@ -1,16 +1,16 @@
-#ifndef JUMPING_H
-#define JUMPING_H
+#ifndef CLIMBING_H
+#define CLIMBING_H
 
 #include <State.h>
 
-class Jumping : public State
+class Walking : public State
 {
 public:
-	Jumping();
-	~Jumping() {};
+	Walking() { m_minFrame = 6; m_maxFrame = 11; };
+	~Walking() {};
 	int getMinFrame();
 	int getMaxFrame();
-	void walking(Animation* a);
+	void jumping(Animation* a);
 	void hammering(Animation* a);
 	void shoveling(Animation* a);
 	void swording(Animation* a);

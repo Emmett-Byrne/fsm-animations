@@ -36,7 +36,7 @@ void Player::handleInput(Input in)
 		break;
 	case Input::Action::UP:
 		//std::cout << "Player Up" << std::endl;
-		m_animation.climbing();
+		m_animation.walking();
 		break;
 	case Input::Action::LEFT:
 		//std::cout << "Player Left" << std::endl;
@@ -44,10 +44,23 @@ void Player::handleInput(Input in)
 		break;
 	case Input::Action::RIGHT:
 		//std::cout << "Player Idling" << std::endl;
-		m_animation.jumping();
+		m_animation.shoveling();
+		break;
+	case Input::Action::DOWN:
+		//std::cout << "Player Idling" << std::endl;
+		m_animation.hammering();
+		break;
+	case Input::Action::SPACE:
+		//std::cout << "Player Idling" << std::endl;
+		m_animation.swording();
 		break;
 	default:
 		break;
+	}
+
+	if (in.getCurrent() != in.getPrevious())
+	{
+		m_animated_sprite.setFrameRange(m_animation.getCurrent()->getMinFrame(), m_animation.getCurrent()->getMaxFrame());
 	}
 }
 

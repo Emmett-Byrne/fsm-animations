@@ -35,6 +35,34 @@ int main()
 	animated_sprite.addFrame(sf::IntRect(343, 88, 84, 84));
 	animated_sprite.addFrame(sf::IntRect(428, 88, 84, 84));
 
+	animated_sprite.addFrame(sf::IntRect(3, 173, 84, 84));
+	animated_sprite.addFrame(sf::IntRect(88, 173, 84, 84));
+	animated_sprite.addFrame(sf::IntRect(173, 173, 84, 84));
+	animated_sprite.addFrame(sf::IntRect(258, 173, 84, 84));
+	animated_sprite.addFrame(sf::IntRect(343, 173, 84, 84));
+	animated_sprite.addFrame(sf::IntRect(428, 173, 84, 84));
+
+	animated_sprite.addFrame(sf::IntRect(3, 258, 84, 84));
+	animated_sprite.addFrame(sf::IntRect(88, 258, 84, 84));
+	animated_sprite.addFrame(sf::IntRect(173, 258, 84, 84));
+	animated_sprite.addFrame(sf::IntRect(258, 258, 84, 84));
+	animated_sprite.addFrame(sf::IntRect(343, 258, 84, 84));
+	animated_sprite.addFrame(sf::IntRect(428, 258, 84, 84));
+
+	animated_sprite.addFrame(sf::IntRect(3, 343, 84, 84));
+	animated_sprite.addFrame(sf::IntRect(88, 343, 84, 84));
+	animated_sprite.addFrame(sf::IntRect(173, 343, 84, 84));
+	animated_sprite.addFrame(sf::IntRect(258, 343, 84, 84));
+	animated_sprite.addFrame(sf::IntRect(343, 343, 84, 84));
+	animated_sprite.addFrame(sf::IntRect(428, 343, 84, 84));
+
+	animated_sprite.addFrame(sf::IntRect(3, 428, 84, 84));
+	animated_sprite.addFrame(sf::IntRect(88, 428, 84, 84));
+	animated_sprite.addFrame(sf::IntRect(173, 428, 84, 84));
+	animated_sprite.addFrame(sf::IntRect(258, 428, 84, 84));
+	animated_sprite.addFrame(sf::IntRect(343, 428, 84, 84));
+	animated_sprite.addFrame(sf::IntRect(428, 428, 84, 84));
+
 	// Setup the Player
 	Player player(animated_sprite);
 	Input input;
@@ -53,7 +81,11 @@ int main()
 				window.close();
 				break;
 			case sf::Event::KeyPressed:
-				if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
+				if (sf::Keyboard::isKeyPressed(sf::Keyboard::I))
+				{
+					input.setCurrent(Input::Action::IDLE);
+				}
+				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
 				{
 					input.setCurrent(Input::Action::LEFT);
 				}
@@ -65,15 +97,23 @@ int main()
 				{
 					input.setCurrent(Input::Action::UP);
 				}
+				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
+				{
+					input.setCurrent(Input::Action::DOWN);
+				}
+				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
+				{
+					input.setCurrent(Input::Action::SPACE);
+				}
 				break;
 			default:
-				input.setCurrent(Input::Action::IDLE);
 				break;
 			}
 		}
 
 		// Handle input to Player
 		player.handleInput(input);
+		input.setCurrent(input.getCurrent());
 
 		// Update the Player
 		player.update();

@@ -5,54 +5,55 @@
 #include <Hammering.h>
 #include <Swording.h>
 
-#include <string>
 
-Idle::Idle()
+
+Swording::Swording()
 {
-	m_minFrame = 0;
-	m_maxFrame = 5;
+	m_minFrame = 18;
+	m_maxFrame = 23;
 }
 
-void Idle::handleInput() {}
-void Idle::update() {}
+void Swording::handleInput() {}
+void Swording::update() {}
 
-int Idle::getMinFrame()
+int Swording::getMinFrame()
 {
 	return m_minFrame;
 }
 
-int Idle::getMaxFrame()
+int Swording::getMaxFrame()
 {
 	return m_maxFrame;
 }
 
-void Idle::jumping(Animation* a)
+void Swording::jumping(Animation* a)
 {
 	//std::cout << "Idle -> Jumping" << std::endl;
 	a->setCurrent(new Jumping());
 	delete this;
 }
-void Idle::walking(Animation* a)
+void Swording::walking(Animation* a)
 {
 	//std::cout << "Idle -> Climbing" << std::endl;
 	a->setCurrent(new Walking());
 	delete this;
 }
 
-void Idle::hammering(Animation * a)
+void Swording::hammering(Animation * a)
 {
 	a->setCurrent(new Hammering());
 	delete this;
 }
 
-void Idle::shoveling(Animation * a)
+void Swording::shoveling(Animation * a)
 {
 	a->setCurrent(new Shoveling());
 	delete this;
 }
 
-void Idle::swording(Animation * a)
+void Swording::idle(Animation* a)
 {
-	a->setCurrent(new Swording());
+	//std::cout << "Jumping -> Idle" << std::endl;
+	a->setCurrent(new Idle());
 	delete this;
 }
